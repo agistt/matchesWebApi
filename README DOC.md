@@ -1,7 +1,4 @@
-# This Project was implemented based on Technical Assigment for an interview purposes
-# It was implemented with InteliJ IDE
-
-[Projects Technologies/Dependecies:]
+[Project Technologies/Dependecies:]
 - Java 17
 - SpringBoot
 - JPA
@@ -19,7 +16,7 @@ in order to have basic functionalities from jpa (create,read,update,delete etc).
 Each **Controller** implements basic HTTP requests using spring web annotation Mapping for those incoming requests.
 Used **@RequestBody, @PathVariable, @RequestParam** to get incoming Object,values.
 
-Created entity Match based on the description with id,description,team_a,team_b,match_time,match_date,sport.
+Created entity Match with id,description,team_a,team_b,match_time,match_date,sport.
 Used hibernate in order to autocreate tables in our database based on our Entities values and properites. Also
 create MatchOdds entity with **@ManytoOne** connection with Match entity in order to have a ForeignKey on **match_id** between
 these two Entities.
@@ -27,7 +24,11 @@ these two Entities.
 In application.properties is defined all properties that are needed in order JPA connect
 to database (creds and other hibernates properties to autogenerate database).
 
+> For testing this WebAPI have to make some basic modifications in credentials(username,password,url) in application.properties
+> in order to connect successfully to the database. First time running set spring.jpa.hibernate.ddl-auto= update value to create 
+> in order to create the tables in DB
+
 #### Some executed Requests examples from Postman:
-![](D:\git projects\matchesapp\img.png "createMatchRequest")
-![](D:\git projects\matchesapp\img_1.png "getAllMatches")
-![](D:\git projects\matchesapp\img_2.png "createMatchOdd")
+[image](img.png "createMatchRequest")
+[image](img_1.png "getAllMatches")
+[image](img_2.png "createMatchOdd")
